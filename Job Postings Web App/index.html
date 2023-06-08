@@ -1,0 +1,77 @@
+<!-- The index.html or home page, is the landing page of the job vacancies webpage. -->
+<!-- This page includes a header with menu to the pages of the website, main content including a description, searchbar and the top job vacancies, along with a footer. -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Setting up metadata for the index page. Which includes the title of the page and stylesheet -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UK Vacancies & Salary Calculator</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Initalising the body tag, which will contain all of the pages content such as header, main content and footer. -->
+
+<body>
+	<!-- Initialise the header element which contains a logo (acting as a link to the homepage or index.html), and a menu with links to the pay calculator and vacancies page. -->
+	<header class="header">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="UK Vacancies" height="60">
+		</a>
+		<!-- Create the menu items, which will be responsive on mobile and desktop, when the checkbox is clicked the menu will open and close.   -->
+		<input class="menu-btn" type="checkbox" id="menu-btn">
+		<label class="menu-icon" for="menu-btn">
+			<span class="navicon"></span>
+		</label>
+		<!-- Creating the class "menu" which contains links to vacancies page and pay calculator.  -->
+		<ul class="menu">
+			<li><a href="vacancies.html">BROWSE JOBS</a></li>
+			<li><a href="pay.html">PAY CALCULATOR</a></li>
+		</ul>
+	</header>
+	<!-- Initialise the main element which will include the search bar, image and the top vacancy listings.  -->
+	<main>
+		<div class="main-content">
+			<div class="main-left">
+				<h2>Making Job Searching and Salary Comparing <u>Simple</u>.</h2>
+				<ul class="block-text">
+					<li>
+						Not only can you browse current job listings but with our salary
+						comparison feature, you can compare the pay rates of similar
+						positions and negotiate with confidence. Start exploring job
+						openings and unlocking salary insights today.
+					</li>
+				</ul>
+				<!-- Creating the container which will store the home pages vacancy search bar. -->
+				<div class="search-container">
+					<form id="search-bar" action="/search">
+						<input type="text" id="search-input" placeholder="Search for jobs">
+						<button type="submit">Search Jobs!</button>
+					</form>
+				</div>
+			</div>
+			<!-- Div container including the unsplash image to the right of the page.-->
+			<div class="main-right">
+				<div>
+					<img src="images/Work.jpg" width="750" alt="Work">
+				</div>
+			</div>
+		</div>
+
+		<!-- Creating the div container for the top vacancies section on the homepage, which I adapted from the vacancies page code.-->
+		<div class="top-vacancies">
+			<h3>Top Job Vacancies</h3>
+			<ul id="top-job-listings">
+			</ul>
+
+			<!-- index.js script is called after the page is fully loaded and the top jobs are posted to the web page. -->
+			<script src="js/index.js"></script>
+		</div>
+	</main>
+	<!-- Initialise the footer element. -->
+	<footer>
+		<p>Vacancies and Job Calculator. Email</p>
+	</footer>
+</body>
+
+</html>

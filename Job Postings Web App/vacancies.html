@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Setting up metadata for the index page. Which includes the title of the page and stylesheet -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Job Vacancies</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!-- Initialise the header element which contains a logo (acting as a link to the homepage or index.html), and a menu with links to the pay calculator and vacancies page. -->
+	<header class="header">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="UK Vacancies" height="60">
+		</a>
+		<!-- Create the menu items, which will be responsive on mobile and desktop, when the checkbox is clicked the menu will open and close.   -->
+
+		<input class="menu-btn" type="checkbox" id="menu-btn">
+		<label class="menu-icon" for="menu-btn">
+			<span class="navicon"></span>
+		</label>
+		<!-- Creating the class "menu" which contains links to vacancies page and pay calculator.  -->
+
+		<ul class="menu">
+			<li><a href="vacancies.html">BROWSE JOBS</a></li>
+			<li><a href="pay.html">PAY CALCULATOR</a></li>
+		</ul>
+	</header>
+	<!-- Initialise the main element which will include the vacancies searchbar, vacancies results and the individual vacancy general information when the vacancy is clicked.  -->
+	<main>
+		<div class="container">
+			<section>
+				<h1>Job Vacancies</h1>
+				<!-- Initialise the div element which will contain the searchbar. -->
+				<div class="search-container">
+					<form id="search-bar">
+						<input type="text" id="search-input" placeholder="Search for jobs...">
+						<button type="submit">Search Jobs</button>
+					</form>
+				</div>
+			</section>
+		</div>
+		<!-- The vacancy listings will appear here. -->
+		<div class="content-wrapper">
+			<div class="vacancies-container" id="vacancies-container"></div>
+			<div id="job-info-container"></div>
+		</div>
+	</main>
+
+
+	<footer>
+		<p>2023 UK Vacancies & Salary Calculator.</p>
+	</footer>
+
+	<script src="js/vacancy.js"></script>
+</body>
+
+</html>

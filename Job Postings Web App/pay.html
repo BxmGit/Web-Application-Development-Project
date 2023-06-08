@@ -1,0 +1,85 @@
+<!-- The pay calculator page includes the pay calculator where users can input various job titles, with the wages earned in a specific timeframe, which it will then display in a  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Setting up metadata for the index page. Which includes the title of the page and stylesheet. The pay-calculator.js script uses the defer attribute so it only runs after the DOM content is fully loaded. -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pay Calculator - UK Vacancies & Salary Calculator</title>
+	<script src="js/pay-calculator.js" defer></script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- Initalising the body tag, which will contain all of the pages content such as header, main content and footer. -->
+
+<body>
+	<!-- Initialise the header element which contains a logo (acting as a link to the homepage or index.html), and a menu with links to the pay calculator and vacancies page. -->
+	<header class="header">
+		<a href="index.html" class="logo">
+			<img src="images/logo.png" alt="UK Vacancies" height="60">
+		</a>
+		<!-- Create the menu items, which will be responsive on mobile and desktop, when the checkbox is clicked the menu will open and close.   -->
+		<input class="menu-btn" type="checkbox" id="menu-btn">
+		<label class="menu-icon" for="menu-btn">
+			<span class="navicon"></span>
+		</label>
+		<!-- Creating the class "menu" which contains links to vacancies page and pay calculator.  -->
+		<ul class="menu">
+			<li><a href="vacancies.html">BROWSE JOBS</a></li>
+			<li><a href="pay.html">PAY CALCULATOR</a></li>
+		</ul>
+	</header>
+	<!-- Initialise the main element which will include the pay calculator form, image and the pay calculator results.  -->
+	<main>
+		<!-- Pay calculator image element. -->
+		<div class="content-area">
+			<div class="image-left">
+				<img src="images/money.jpg" alt="Jobs Availible">
+			</div>
+			<!-- Create the div area for where pay calculator form will be displayed. -->
+			<div class="pay-calculator-area">
+				<div class="pay-calculator-box">
+					<h2>Pay Calculator</h2>
+					<h3>Discover your earning potential with our salary tool.</h3>
+					<!-- Pay calculator form which will ask the user to input the Title, Pay, Timeframe and Hours Worked. Javascript will then compute the pay and display it below the table. Users can add as many different job calculations as they want to compare. -->
+					<form id="pay-calculator-form">
+						<label for="job-title">Job Title:</label>
+						<input class="input" type="text" id="job-title" required>
+						<br>
+						<label for="pay">Pay:</label>
+						<input class="input" type="number" id="pay" required>
+						<br>
+						<label for="pay-timeframe">Pay Timeframe:</label>
+						<select class="input" id="pay-timeframe">
+							<option value="year">Year</option>
+							<option value="month">Month</option>
+							<option value="week">Week</option>
+							<option value="hour">Hour</option>
+						</select>
+						<br>
+						<label for="hours-per-week">Hours per Week:</label>
+						<input class="input" type="number" id="hours-per-week" required>
+						<br>
+						<!-- The submit button is used as an event listener to run the javascript. -->
+						<button type="submit">Calculate</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Here the div area is created for the results of the pay calculator. Each time the user submits the form the results will be appended to this area, with a max of 4 per horizontal row. -->
+		<div class="results-area">
+			<section id="results-section" style="display: none">
+				<h2>Results</h2>
+				<div id="results"></div>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<p>2023 UK Vacancies & Salary Calculator</p>
+	</footer>
+</body>
+
+</html>
